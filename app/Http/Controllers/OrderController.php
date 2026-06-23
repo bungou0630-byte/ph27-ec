@@ -5,11 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Order;
 use App\Models\Product;
+<<<<<<< Updated upstream
 use App\Models\OrderDetail;
 
 class OrderController extends Controller
 {
     public function store(Request $request)
+=======
+
+class OrderController extends Controller
+{
+    public function store()
+>>>>>>> Stashed changes
     {
         // [1 => 3, 2 => 5] (商品ID => 数量)
         $cart = session()->get('cart', []);
@@ -21,6 +28,7 @@ class OrderController extends Controller
 
         $order = new Order();
         $order->total_price = $totalPrice;
+<<<<<<< Updated upstream
         $order->user_id = $request->user()->id;
         $order->save();
 
@@ -32,6 +40,10 @@ class OrderController extends Controller
             $detail->save();
         }
 
+=======
+        $order->save();
+
+>>>>>>> Stashed changes
         session()->forget('cart');
 
         session()->flash('message', '注文が完了しました！');
@@ -40,6 +52,7 @@ class OrderController extends Controller
             'order' => $order,
         ]);
     }
+<<<<<<< Updated upstream
 
     public function index(Request $request)
     {
@@ -55,4 +68,6 @@ class OrderController extends Controller
             'order' => $order,
         ]);
     }
+=======
+>>>>>>> Stashed changes
 }

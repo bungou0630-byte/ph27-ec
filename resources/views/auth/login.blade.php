@@ -4,6 +4,7 @@
 
 @section('content')
     <h1>ログイン</h1>
+<<<<<<< Updated upstream
     @if ($errors->any())
         @foreach ($errors->all() as $error)
             <article>{{ $error }}</article>
@@ -22,4 +23,6 @@
         <button type="submit">ログイン</button>
     </form>
     <a href="/register">会員登録はこちら</a>
+=======
+>>>>>>> Stashed changes
 @endsection
